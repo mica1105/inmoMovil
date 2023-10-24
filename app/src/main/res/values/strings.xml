@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">InmobiliariaMovil</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="array_usos">
+        <item>Domestico</item>
+        <item>Comercial</item>
+        <item>Profesional</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="array_tipos">
+        <item>Casa</item>
+        <item>Departamento</item>
+        <item>Local</item>
+        <item>Oficina</item>
+        <item>Otro</item>
+    </string-array>
+    <string name="menu_ubicacion">Ubicación</string>
+    <string name="menu_perfil">Perfil</string>
+    <string name="menu_inmuebles">Inmuebles</string>
+    <string name="menu_inquilinos">Inquilinos</string>
+    <string name="menu_pagos">Contratos Vigentes</string>
+    <string name="menu_logout">Cerrar Sesión</string>
+</resources>
