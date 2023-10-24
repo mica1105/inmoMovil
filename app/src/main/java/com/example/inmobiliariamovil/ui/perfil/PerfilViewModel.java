@@ -8,11 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-import com.example.inmobiliariamovil.R;
 import com.example.inmobiliariamovil.modelo.Propietario;
-import com.example.inmobiliariamovil.request.ApiClient;
 import com.example.inmobiliariamovil.request.ApiClientRetrofit;
 
 import retrofit2.Call;
@@ -24,13 +21,11 @@ public class PerfilViewModel extends AndroidViewModel {
     private MutableLiveData<Propietario> usuario;
     private MutableLiveData<Boolean> estado;
     private MutableLiveData<String> textoBoton;
-    private ApiClient apiClient;
     private Context context;
 
     public PerfilViewModel(@NonNull Application application) {
         super(application);
         context= application.getApplicationContext();
-        apiClient= ApiClient.getApi();
     }
 
 
@@ -67,7 +62,6 @@ public class PerfilViewModel extends AndroidViewModel {
                 public void onResponse(Call<Propietario> call, Response<Propietario> response) {
                     if(response.isSuccessful()){
                         Propietario propietario= response.body();
-                        //propietario.setAvatar(R.drawable.sonia);
                         usuario.postValue(propietario);
                     } else {
                         Log.d("salida respuesta", response.raw().message());
@@ -92,9 +86,8 @@ public class PerfilViewModel extends AndroidViewModel {
             @Override
             public void onResponse(Call<Propietario> call, Response<Propietario> response) {
                 if (response.isSuccessful()){
-                    //Log.d("salida", response.body().getApellido());
+
                     Propietario propietario= response.body();
-                    //propietario.setAvatar(R.drawable.sonia);
                     usuario.postValue(propietario);
                 } else {
                     Log.d("salida respuesta", response.raw().message());

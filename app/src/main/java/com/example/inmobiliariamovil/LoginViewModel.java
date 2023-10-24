@@ -3,16 +3,12 @@ package com.example.inmobiliariamovil;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.inmobiliariamovil.modelo.Propietario;
-import com.example.inmobiliariamovil.request.ApiClient;
 import com.example.inmobiliariamovil.request.ApiClientRetrofit;
 
 import retrofit2.Call;

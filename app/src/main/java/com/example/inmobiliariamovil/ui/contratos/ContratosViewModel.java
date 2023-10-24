@@ -10,7 +10,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.inmobiliariamovil.modelo.Inmueble;
-import com.example.inmobiliariamovil.request.ApiClient;
 import com.example.inmobiliariamovil.request.ApiClientRetrofit;
 
 import java.util.ArrayList;

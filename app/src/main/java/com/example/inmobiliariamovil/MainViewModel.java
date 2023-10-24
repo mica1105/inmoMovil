@@ -10,7 +10,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.inmobiliariamovil.modelo.Propietario;
-import com.example.inmobiliariamovil.request.ApiClient;
 import com.example.inmobiliariamovil.request.ApiClientRetrofit;
 
 import retrofit2.Call;
@@ -19,13 +18,11 @@ import retrofit2.Response;
 
 public class MainViewModel extends AndroidViewModel {
     private Context context;
-    private ApiClient apiClient;
     private MutableLiveData<Propietario> propietario;
 
     public MainViewModel(@NonNull Application application) {
         super(application);
         context= application.getApplicationContext();
-        apiClient= ApiClient.getApi();
     }
 
     public LiveData<Propietario> getPropietario(){
@@ -44,7 +41,6 @@ public class MainViewModel extends AndroidViewModel {
             public void onResponse(Call<Propietario> call, Response<Propietario> response) {
                 if (response.isSuccessful()){
                     Propietario usuario= response.body();
-                    //usuario.setAvatar(R.drawable.sonia);
                     propietario.postValue(usuario);
                 } else {
                     Log.d("salida respuesta", response.raw().message());
