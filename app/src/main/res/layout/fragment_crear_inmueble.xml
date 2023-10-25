@@ -169,16 +169,28 @@
         app:layout_constraintStart_toEndOf="@+id/spUsoForm"
         app:layout_constraintTop_toBottomOf="@+id/tvAmbientes" />
 
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="15dp"
+        android:textColor="#ff0000"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etAmbientesForm" />
+
     <ImageView
         android:id="@+id/ivFotoForm"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:src="@mipmap/ic_imagen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etAmbientesForm" />
+        app:layout_constraintTop_toBottomOf="@+id/tvError" />
 
     <Button
         android:id="@+id/btGuardar"

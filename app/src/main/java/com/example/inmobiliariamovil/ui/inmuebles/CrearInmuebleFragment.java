@@ -61,9 +61,17 @@ public class CrearInmuebleFragment extends Fragment {
         ArrayAdapter<CharSequence> adaptadorTipos= ArrayAdapter.createFromResource(getContext(),R.array.array_tipos,
                 R.layout.dropdown_item);
         binding.acTipo.setAdapter(adaptadorTipos);
+
         pickMedia= registerForActivityResult(new ActivityResultContracts.PickVisualMedia(),uri->{
             binding.ivFotoForm.setImageURI(uri);
             uriF= uri;
+        });
+        mViewModel.getError().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                binding.tvError.setText(s);
+                binding.tvError.setVisibility(View.VISIBLE);
+            }
         });
         mViewModel.getInmueble().observe(getViewLifecycleOwner(), new Observer<Inmueble>() {
             @Override
@@ -83,7 +91,6 @@ public class CrearInmuebleFragment extends Fragment {
         binding.btGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Inmueble inmueble= new Inmueble();
                 inmueble.setDireccion( binding.etDireccionForm.getText().toString());
                 inmueble.setTipo( binding.acTipo.getText().toString());
