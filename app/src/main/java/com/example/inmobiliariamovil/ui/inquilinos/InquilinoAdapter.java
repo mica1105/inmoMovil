@@ -42,7 +42,7 @@ public class InquilinoAdapter extends  RecyclerView.Adapter<InquilinoAdapter.Vie
     @Override
     public void onBindViewHolder(@NonNull InquilinoAdapter.ViewHolder holder, int position) {
         holder.tvDireccion.setText(inmuebles.get(position).getDireccion());
-        String url="http://192.168.1.13:5000";
+        String url="http://192.168.1.12:5000";
         Glide.with(context)
                 .load(url+inmuebles.get(position).getImagen())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)

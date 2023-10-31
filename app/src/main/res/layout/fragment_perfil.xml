@@ -54,6 +54,7 @@
         android:layout_marginEnd="52dp"
         android:textStyle="bold"
         android:enabled="false"
+        android:backgroundTint="@color/purple_700"
         android:textColor="@color/negro_morado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDni" />
@@ -79,6 +80,7 @@
         android:layout_marginEnd="52dp"
         android:textStyle="bold"
         android:enabled="false"
+        android:backgroundTint="@color/purple_700"
         android:textColor="@color/negro_morado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvApellido" />
@@ -103,6 +105,7 @@
         android:layout_marginEnd="52dp"
         android:layout_marginTop="2dp"
         android:enabled="false"
+        android:backgroundTint="@color/purple_700"
         android:textColor="@color/negro_morado"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,6 +130,7 @@
         android:layout_marginEnd="52dp"
         android:layout_marginTop="2dp"
         android:enabled="false"
+        android:backgroundTint="@color/purple_700"
         android:textColor="@color/negro_morado"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -177,11 +181,24 @@
         android:layout_marginEnd="52dp"
         android:layout_marginTop="2dp"
         android:enabled="false"
+        android:backgroundTint="@color/purple_700"
         android:textColor="@color/negro_morado"
         android:textStyle="bold"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+
+    <ImageButton
+        android:id="@+id/btEditarClave"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="480dp"
+        android:background="@drawable/btn_fondocolor"
+        android:backgroundTint="@color/morado_oscuro"
+        android:src="@drawable/ic_edit"
+        app:layout_constraintStart_toEndOf="@+id/etPassword"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ivFotoPerfil"

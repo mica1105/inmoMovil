@@ -44,7 +44,7 @@ public class ContratoAdapter extends RecyclerView.Adapter<ContratoAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Inmueble inmueble= inmuebles.get(position);
-        String url="http://192.168.1.13:5000";
+        String url="http://192.168.1.12:5000";
         Glide.with(context)
                 .load(url+inmuebles.get(position).getImagen())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)

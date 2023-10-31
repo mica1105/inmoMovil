@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         viewModel.getPropietario().observe(this, new Observer<Propietario>() {
             @Override
             public void onChanged(Propietario propietario) {
-                String url="http://192.168.1.13:5000";
+                String url="http://192.168.1.12:5000";
                 Glide.with(getApplicationContext())
                         .load(url+propietario.getAvatar())
                         .diskCacheStrategy(DiskCacheStrategy.ALL)

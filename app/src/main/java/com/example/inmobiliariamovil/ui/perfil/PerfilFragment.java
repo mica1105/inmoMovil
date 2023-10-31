@@ -11,11 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.inmobiliariamovil.LoginActivity;
+import com.example.inmobiliariamovil.R;
 import com.example.inmobiliariamovil.databinding.FragmentPerfilBinding;
 import com.example.inmobiliariamovil.modelo.Propietario;
 import com.example.inmobiliariamovil.ui.ubicacion.UbicacionViewModel;
@@ -46,12 +48,11 @@ public class PerfilFragment extends Fragment {
                     binding.etEmail.setText(propietario.getEmail());
                     binding.etPassword.setText(propietario.getClave());
                     binding.etTelefono.setText(propietario.getTelefono());
-                    String url="http://192.168.1.13:5000";
+                    String url="http://192.168.1.12:5000";
                     Glide.with(getContext())
                             .load(url+propietario.getAvatar())
                             .diskCacheStrategy(DiskCacheStrategy.ALL)
                             .into(binding.ivFotoPerfil);
-                    //binding.ivFotoPerfil.setImageResource(propietario.getAvatar());
                 }
             }
         });
@@ -61,8 +62,6 @@ public class PerfilFragment extends Fragment {
                 binding.etDni.setEnabled(aBoolean);
                 binding.etApellido.setEnabled(aBoolean);
                 binding.etNombre.setEnabled(aBoolean);
-                binding.etEmail.setEnabled(aBoolean);
-                binding.etPassword.setEnabled(aBoolean);
                 binding.etTelefono.setEnabled(aBoolean);
             }
         });
@@ -91,6 +90,13 @@ public class PerfilFragment extends Fragment {
                 if (texto!= null){
                     perfilViewModel.accionBoton(texto,usuario);
                 }
+            }
+        });
+        binding.btEditarClave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main)
+                        .navigate(R.id.cambiarClaveFragment);
             }
         });
     }

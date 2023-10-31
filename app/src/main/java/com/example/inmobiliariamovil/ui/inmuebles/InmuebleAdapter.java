@@ -44,7 +44,7 @@ public class InmuebleAdapter extends  RecyclerView.Adapter<InmuebleAdapter.ViewH
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.tvDireccion.setText(inmuebles.get(position).getDireccion());
         holder.tvPrecio.setText("$"+inmuebles.get(position).getPrecio());
-        String url="http://192.168.1.13:5000";
+        String url="http://192.168.1.12:5000";
         Glide.with(context)
                 .load(url+inmuebles.get(position).getImagen())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)

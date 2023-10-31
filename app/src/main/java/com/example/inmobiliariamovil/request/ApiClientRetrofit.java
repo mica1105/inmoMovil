@@ -30,7 +30,7 @@ import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public class ApiClientRetrofit {
-    private static final String URLBASE="http://192.168.1.13:5000/";
+    private static final String URLBASE="http://192.168.1.12:5000/";
     private static ApiInmobiliaria apiInmobiliaria;
     public static ApiInmobiliaria getApiInmobiliaria(){
         Gson gson= new GsonBuilder().setLenient().create();
@@ -53,6 +53,11 @@ public class ApiClientRetrofit {
 
         @PUT("Propietarios")
         Call<Propietario> modificarPropietario (@Header("Authorization") String token, @Body Propietario propietario);
+
+        @FormUrlEncoded
+        @PUT("Propietarios/EditarClave")
+        Call<String> editarClave(@Header("Authorization") String token,@Field("actual") String actual,
+                                 @Field("nueva") String nueva);
 
         @GET("Inmuebles")
         Call<ArrayList<Inmueble>> listaInmuebles(@Header("Authorization") String token);

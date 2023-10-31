@@ -52,7 +52,7 @@ public class InmuebleFragment extends Fragment {
                 binding.tvAmbientes.setText(inmueble.getAmbientes()+"");
                 binding.tvPrecio.setText("$"+inmueble.getPrecio());
                 binding.cbDisponible.setChecked(inmueble.isEstado());
-                String url="http://192.168.1.13:5000";
+                String url="http://192.168.1.12:5000";
                 Glide.with(getContext())
                         .load(url+inmueble.getImagen())
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
